@@ -1,0 +1,36 @@
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #e5e7eb;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grid-container {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    background-color: aqua;
+}
+.square {
+    /*border: 0.1px solid green;*/
+}
+
+.colored-background {
+    background-color: black;
+}
+.wrong {
+    color: crimson;
+}
+.success {
+    color: darkgreen;
+}

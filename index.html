@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>Etch-a-Sketch</h2>
+    </header>
+    <div class="container">
+
+        <div id="size-dialog">
+            <label for="size-input">Change size of grid</label>
+            <input type="number" id="size-input" min="1" max="100">
+            <button id="confirm-size">Confirm</button>
+        </div>
+        <p class="grid-notifications"></p>
+
+        <div class="grid-container">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
