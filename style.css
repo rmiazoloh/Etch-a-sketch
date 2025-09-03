@@ -26,11 +26,19 @@ body {
 }
 
 .colored-background {
-    background-color: black;
+    background-color: #000000;
+    /*opacity: 0;*/
+}
+.colored-background-light {
+    background-color: #000000;
+    opacity: 0;
 }
 .wrong {
     color: crimson;
 }
 .success {
     color: darkgreen;
+}
+.infos {
+    color: dodgerblue;
 }
