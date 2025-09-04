@@ -95,14 +95,19 @@ function setupListenerDrawEvents() {
 
     elements.square.forEach(square => square.addEventListener('mouseover', (event) => {
         if (mouseDown) {
-            event.target.classList.add('colored-background');
-            if (isRandomColor) {
-                event.target.style.backgroundColor = generateRandomColor();
-            }
             if (isDarkerMode) {
                 let element = event.target;
-                element.style.opacity = 0;
-                event.target.style.opacity = addOpacity(element);
+                if(element.classList.contains('colored-background')){
+                    event.target.style.opacity = addOpacity(element);
+                }else {
+                    event.target.classList.add('colored-background');
+                    event.target.style.opacity = 0.1;
+                }
+            }else {
+                event.target.classList.add('colored-background');
+                if (isRandomColor) {
+                    event.target.style.backgroundColor = generateRandomColor();
+                }
             }
             nbSquareColored++;
         }
@@ -129,9 +134,16 @@ function generateRandomColor() {
 }
 
 function addOpacity(element) {
-    // Convertir en nombre (parseFloat) et augmenter de 10%
+   
     const opacity = window.getComputedStyle(element).opacity;
-    let newOpacity = Math.min(parseFloat(opacity) + (0.1 * nbSquareColored), 1);
+    let newOpacity = parseFloat(opacity);
+    if (newOpacity < 1){
+        newOpacity = Math.min(newOpacity + 0.1, 1);
+    }else{
+        newOpacity = 1;
+    }
+     // Convertir en nombre (parseFloat) et augmenter de 10%
+    //let newOpacity = Math.min(parseFloat(opacity) + (0.1 * nbSquareColored), 1);
     return newOpacity;
 
 }
